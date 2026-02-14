@@ -1549,3 +1549,22 @@ P.S. - Every word in this letter is true, but even all these words together cann
 
 </body>
 </html>
+<script>
+  // --- REPLACE MUSIC HERE ---
+  // Change the URL below to your new song's direct link
+  const newSongUrl = "https://drive.google.com/uc?export=download&id=YOUR_NEW_FILE_ID";
+
+  // Get the audio element and update its source
+  const audio = document.getElementById('bg-music');
+  if (audio) {
+    // Pause current playback and reset
+    audio.pause();
+    audio.src = newSongUrl;
+    audio.load(); // Reload the new source
+
+    // If the music was playing, resume with the new song
+    if (window.isPlaying) {
+      audio.play().catch(() => {});
+    }
+  }
+</script>
